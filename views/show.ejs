@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<nav>
+    <h4>Company Employee Database</h4>
+    <div class="nav-links">
+        <a href = "http://localhost:2000">Add New Employee</a>
+        <a href = "http://localhost:2000/show">Show Employees</a>
+    </div>
+</nav>
+<body>
+    <h1 class = "employeeedit">Employees</h1>
+    <form class = "search" action = "/searchdb" method = "GET">
+        <label>Search</label>
+        <input type = "text" id="entersearch" name="search">
+        <button class = "searchbutton">Search</button>
+    </form>
+    <div class = "employeeinfo">
+    <ul>
+    <div class = "employeecontainer">
+        <!-- /show/:id/edit -->
+       <% for (let item of items) { %>
+        <div>
+        <li><%= item.name %> </li> 
+        <li><%= item.email %> </li> 
+        <li><%= item.gender %> </li> 
+        <li><%= item.department %></li> 
+        <li>$<%= item.salary %>/yr</li>
+        <li  class = "buttons" style = "list-style-type: none;">
+            <button class = "editbutton">
+                <a href="/show/<%= item._id%>/edit">Edit</a> 
+            </button>
+
+            <form action="/show/<%= item._id %>?_method=DELETE"  method="post">
+                <button style = "margin-bottom: 2vw" class = "deletebutton">Delete</button>
+             </form>
+        </li>
+        </div>
+        <%} %>
+    </div>
+    </ul>
+    </div>
+</body>
+</html>

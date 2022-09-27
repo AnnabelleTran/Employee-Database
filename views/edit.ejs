@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<style>
+    *{
+margin: 0;
+}
+.mainform{
+background-color: #cdcdcd;
+padding: 2vw 5vw;
+display: flex;
+flex-direction: column;
+margin: 2vw 5vw;
+border: .25vw solid black;
+font-family: 'Roboto', sans-serif;
+}
+input{
+margin-bottom: 1vw;
+}
+
+nav{
+    background-color: #3f3f3f;
+    font-family: 'Roboto', sans-serif;
+    padding: 1vw 2vw;
+    display: grid;
+    grid-template-areas:
+    "title links links";
+    border-bottom: .25vw solid black;
+}
+nav a{
+        color: white;
+        text-decoration: none;
+        padding-left: 5vw;
+    }
+.nav-links{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: -20vw;
+}
+
+h4{
+    color: white;
+    font-size:1.5vw;
+}
+</style>
+</head>
+<nav>
+    <h4>Company Employee Database</h4>
+    <div class="nav-links">
+        <a href = "http://localhost:2000">Add New Employee</a>
+        <a href = "http://localhost:2000/show">Show Employees</a>
+    </div>
+</nav>
+
+<body>
+    <form class = "mainform" method = "post" action = '/show/<%= items._id %>?_method=PUT'>
+        <h2>Edit Employee Data</h2>
+
+        <label>Name</label>
+        <input type = 'text' name = "name" value = "<%= items.name %>"placeholder = "Full Name">
+
+        <label>Email</label>
+        <input type = 'text' name = "email" value = "<%= items.email %>" placeholder = "example@email.com">
+
+        <label>Gender</label>
+        <input type = 'text' name = "gender" value = "<%= items.gender %>" placeholder = "Gender">
+
+        <label>Department</label>
+        <input type = 'text' name = "department" value = "<%= items.department %>" placeholder = "Department">
+
+        <label>Salary</label>
+        <input type = 'number' name = "salary" value = "<%= items.salary %>" placeholder = "$">
+        <button>Submit</button>
+    </form>
+</body>
+</html>

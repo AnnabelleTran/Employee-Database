@@ -1,0 +1,22 @@
+<% include('partials/header') -%>
+
+<body>
+    employees.forEach((employee) =>{ %>
+        <div>
+            <li><%= employee.name %> </li> 
+            <li><%= employee.email %> </li> 
+            <li><%= employee.gender %> </li> 
+            <li><%= employee.department %></li> 
+            <li>$<%= employee.salary %>/yr</li>
+            <li  class = "buttons" style = "list-style-type: none;">
+                <button class = "editbutton">
+                    <a href="/show/<%= item._id%>/edit">Edit</a> 
+                </button>
+    
+                <form action="/show/<%= item._id %>?_method=DELETE"  method="post">
+                    <button style = "margin-bottom: 2vw" class = "deletebutton">Delete</button>
+                 </form>
+            </li>
+            </div>
+    <% }) %>
+</body>

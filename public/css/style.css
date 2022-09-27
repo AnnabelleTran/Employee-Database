@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+}
+.mainform{
+    background-color: #cdcdcd;
+    padding: 2vw 5vw;
+    display: flex;
+    flex-direction: column;
+    margin: 2vw 5vw;
+    border: .25vw solid black;
+    font-family: 'Roboto', sans-serif;
+}
+input{
+    margin-bottom: 1vw;
+}
+
+nav{
+    background-color: #3f3f3f;
+    font-family: 'Roboto', sans-serif;
+    padding: 1vw 2vw;
+    display: grid;
+    grid-template-areas:
+    "title links links";
+    border-bottom: .25vw solid black;
+}
+
+    nav a{
+        color: white;
+        text-decoration: none;
+        padding-left: 5vw;
+    }
+.nav-links{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: -20vw;
+}
+
+h4{
+    color: white;
+    font-size:1.5vw;
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    padding: 2vw 5vw;
+    padding-bottom: 1vw;
+}
+
+ul{
+    font-family: 'Roboto', sans-serif;
+    /* background-color: #5d5d5d; */
+    background-color: #cdcdcd;
+    margin: .5vw 5vw;
+    padding: 1vw 3vw;
+    border: .25vw solid black;
+    text-align: left;
+}
+
+.employeecontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+    .employeecontainer div{
+        width: 15vw;
+    }
+li{
+    list-style-type:circle;
+}
+
+.editbutton{
+    width: 10vw;
+}
+.deletebutton{
+    width: 10vw;    
+}
+
+.search{
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5vw;
+    font-size: 1.5vw;
+}
+    .search input{
+        width: 25vw;
+    }
+.searchbutton{
+    font-size: 1.25vw;
+}
